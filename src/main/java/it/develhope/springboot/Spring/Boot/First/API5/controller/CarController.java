@@ -6,12 +6,14 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @RestController
 @RequestMapping("/api")
 public class CarController {
     @GetMapping("/")
-    public String getNewCar (@RequestParam (required = true) String id, @RequestParam (required = true) String modelName, @RequestParam (required = true) double price){
-        return "New car: id " + id + ", model name " + modelName + ", price " + price;
+    public String getNewCar (@RequestParam(required = true) Map <String, String> car){
+        return car.entrySet().toString();
     }
     @PostMapping("/")
     public String postNewCar (@Valid @RequestBody CarDTO car, HttpServletRequest request, HttpServletResponse response){
