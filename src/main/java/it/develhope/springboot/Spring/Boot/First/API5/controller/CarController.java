@@ -3,18 +3,18 @@ package it.develhope.springboot.Spring.Boot.First.API5.controller;
 import it.develhope.springboot.Spring.Boot.First.API5.DTO.CarDTO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
 public class CarController {
     @GetMapping("/")
-    public CarDTO getNewCar (@RequestParam (required = true) CarDTO car){
-        return new CarDTO();
+    public String getNewCar (@RequestParam (required = true) CarDTO car){return car.toString();
     }
     @PostMapping
-    public CarDTO postNewCar (@RequestBody CarDTO car, HttpServletRequest request, HttpServletResponse response){
-        return car;
+    public String postNewCar (@Valid @RequestBody CarDTO car, HttpServletRequest request, HttpServletResponse response){
+        return car.toString();
     }
 }
-//fixme aggiungere validation tramite dipendenza, controllare come aggiungere http message 'created'
+//controllare come aggiungere http message 'created'
