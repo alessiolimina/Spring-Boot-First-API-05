@@ -17,4 +17,4 @@ public class CarController {
         return car.toString();
     }
 }
-//fixme controllare come aggiungere http message 'created', aggiungere json e documentazione Postman
+//fixme controllare come far funzionare il getmapping, controllare come aggiungere http message 'created', aggiungere json e documentazione Postman
