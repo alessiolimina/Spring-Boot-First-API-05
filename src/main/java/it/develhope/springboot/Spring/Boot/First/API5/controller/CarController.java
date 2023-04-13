@@ -4,6 +4,7 @@ import it.develhope.springboot.Spring.Boot.First.API5.DTO.CarDTO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,10 +18,9 @@ public class CarController {
         return car.entrySet().toString();
     }
     @PostMapping("/")
-    public String postNewCar (@Valid @RequestBody CarDTO car, HttpServletResponse response){
-        return car.toString() + " " + response.getStatus();
+    public String postNewCar (@Valid @RequestBody CarDTO car){
+        return car.toString() + " " + HttpStatus.CREATED;
     }
 }
 
 //Documentazione Postman: https://documenter.getpostman.com/view/26121086/2s93XwyimR
-//fixme come mettere il messaggio created allo User?
