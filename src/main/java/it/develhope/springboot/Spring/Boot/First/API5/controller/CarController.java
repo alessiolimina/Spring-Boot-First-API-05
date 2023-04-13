@@ -12,7 +12,7 @@ public class CarController {
     @GetMapping("/")
     public String getNewCar (@RequestParam (required = true) CarDTO car){return car.toString();
     }
-    @PostMapping
+    @PostMapping("/")
     public String postNewCar (@Valid @RequestBody CarDTO car, HttpServletRequest request, HttpServletResponse response){
         return car.toString();
     }
