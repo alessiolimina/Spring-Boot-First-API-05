@@ -4,6 +4,7 @@ import it.develhope.springboot.Spring.Boot.First.API5.DTO.CarDTO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -16,8 +17,8 @@ public class CarController {
         return car.entrySet().toString();
     }
     @PostMapping("/")
-    public String postNewCar (@Valid @RequestBody CarDTO car, HttpServletRequest request, HttpServletResponse response){
-        return car.toString();
+    public String postNewCar (@Valid @RequestBody CarDTO car, HttpServletResponse response){
+        return car.toString() + " " + response.getStatus();
     }
 }
-//fixme controllare come aggiungere http message 'created', aggiungere json e documentazione Postman
+//fixme come mettere il messaggio created allo User?
