@@ -10,11 +10,12 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api")
 public class CarController {
     @GetMapping("/")
-    public String getNewCar (@RequestParam (required = true) CarDTO car){return car.toString();
+    public String getNewCar (@RequestParam (required = true) String id, @RequestParam (required = true) String modelName, @RequestParam (required = true) double price){
+        return "New car: id " + id + ", model name " + modelName + ", price " + price;
     }
     @PostMapping("/")
     public String postNewCar (@Valid @RequestBody CarDTO car, HttpServletRequest request, HttpServletResponse response){
         return car.toString();
     }
 }
-//fixme controllare come far funzionare il getmapping, controllare come aggiungere http message 'created', aggiungere json e documentazione Postman
+//fixme controllare come aggiungere http message 'created', aggiungere json e documentazione Postman
