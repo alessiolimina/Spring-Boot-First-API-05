@@ -13,4 +13,4 @@
   * a `GET` request
   * a `POST` request with a correct payload
   * a `POST` request with a wrong payload
-* **note for reviewers**: view `FirstApi5.postman_collection.json` in the root folder for the `Postman` calls
+
