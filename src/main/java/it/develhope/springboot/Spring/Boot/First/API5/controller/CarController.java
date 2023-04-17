@@ -1,11 +1,8 @@
 package it.develhope.springboot.Spring.Boot.First.API5.controller;
 
 import it.develhope.springboot.Spring.Boot.First.API5.DTO.CarDTO;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
