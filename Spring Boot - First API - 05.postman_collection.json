@@ -4,7 +4,8 @@
 		"name": "Spring Boot - First API - 05",
 		"description": "Spring Boot - First API - 05",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "26121086"
+		"_exporter_id": "26121086",
+		"_collection_link": "https://www.postman.com/develhope-exercise-postman/workspace/develhope-postman-use/collection/26121086-ab1ec977-0919-4d4d-9419-8faebc4d6174?action=share&creator=26121086&source=collection_link"
 	},
 	"item": [
 		{
@@ -25,7 +26,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/?id=15648-98-44&modelName=Fiat Punto&price=15544.40",
+					"raw": "http://localhost:8080/api/",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -39,17 +40,20 @@
 						{
 							"key": "id",
 							"value": "15648-98-44",
-							"description": "id"
+							"description": "id",
+							"disabled": true
 						},
 						{
 							"key": "modelName",
 							"value": "Fiat Punto",
-							"description": "modelName"
+							"description": "modelName",
+							"disabled": true
 						},
 						{
 							"key": "price",
 							"value": "15544.40",
-							"description": "price"
+							"description": "price",
+							"disabled": true
 						},
 						{
 							"key": "",
@@ -75,7 +79,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/?id=15648-98-44&modelName=Fiat Punto&price=15544.40",
+							"raw": "http://localhost:8080/api/",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -84,46 +88,24 @@
 							"path": [
 								"api",
 								""
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "15648-98-44",
-									"description": "id"
-								},
-								{
-									"key": "modelName",
-									"value": "Fiat Punto",
-									"description": "modelName"
-								},
-								{
-									"key": "price",
-									"value": "15544.40",
-									"description": "price"
-								},
-								{
-									"key": "",
-									"value": "",
-									"disabled": true
-								}
 							]
 						}
 					},
 					"status": "OK",
 					"code": 200,
-					"_postman_previewlanguage": "plain",
+					"_postman_previewlanguage": "json",
 					"header": [
 						{
 							"key": "Content-Type",
-							"value": "text/plain;charset=UTF-8"
+							"value": "application/json"
 						},
 						{
-							"key": "Content-Length",
-							"value": "54"
+							"key": "Transfer-Encoding",
+							"value": "chunked"
 						},
 						{
 							"key": "Date",
-							"value": "Thu, 13 Apr 2023 21:31:30 GMT"
+							"value": "Mon, 24 Apr 2023 10:42:34 GMT"
 						},
 						{
 							"key": "Keep-Alive",
@@ -135,7 +117,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "[id=15648-98-44, modelName=Fiat Punto, price=15544.40]"
+					"body": "{\n    \"id\": null,\n    \"modelName\": null,\n    \"price\": 0\n}"
 				}
 			]
 		},
@@ -194,8 +176,8 @@
 							]
 						}
 					},
-					"status": "OK",
-					"code": 200,
+					"status": "Created",
+					"code": 201,
 					"_postman_previewlanguage": "plain",
 					"header": [
 						{
@@ -208,7 +190,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Thu, 13 Apr 2023 21:31:48 GMT"
+							"value": "Mon, 24 Apr 2023 10:49:46 GMT"
 						},
 						{
 							"key": "Keep-Alive",
@@ -220,7 +202,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "CarDTO(id=123-456-789, modelName=Golf, price=19999.0) 201 CREATED"
+					"body": "Created car CarDTO(id=123-456-789, modelName=Golf, price=19999.0)"
 				}
 			]
 		},
@@ -259,7 +241,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\":\"123-456-789\",\r\n    \"price\": 19999\r\n}",
+							"raw": "{\r\n    \"id\": null,\r\n    \"modelName\": null,\r\n    \"price\": 19999\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -293,7 +275,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Thu, 13 Apr 2023 21:31:59 GMT"
+							"value": "Mon, 24 Apr 2023 11:24:42 GMT"
 						},
 						{
 							"key": "Connection",
@@ -301,7 +283,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"timestamp\": \"2023-04-13T21:31:59.382+00:00\",\n    \"status\": 400,\n    \"error\": \"Bad Request\",\n    \"trace\": \"org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public java.lang.String it.develhope.springboot.Spring.Boot.First.API5.controller.CarController.postNewCar(it.develhope.springboot.Spring.Boot.First.API5.DTO.CarDTO): [Field error in object 'carDTO' on field 'modelName': rejected value [null]; codes [NotBlank.carDTO.modelName,NotBlank.modelName,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [carDTO.modelName,modelName]; arguments []; default message [modelName]]; default message [Mandatory]] \\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:144)\\r\\n\\tat org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:181)\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:148)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)\\r\\n\\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)\\r\\n\\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:563)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)\\r\\n\\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:631)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)\\r\\n\\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)\\r\\n\\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)\\r\\n\\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)\\r\\n\\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)\\r\\n\\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)\\r\\n\\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)\\r\\n\\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)\\r\\n\\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)\\r\\n\\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)\\r\\n\\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)\\r\\n\\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)\\r\\n\\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)\\r\\n\\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)\\r\\n\\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)\\r\\n\\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)\\r\\n\\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)\\r\\n\\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)\\r\\n\\tat java.base/java.lang.Thread.run(Thread.java:1589)\\r\\n\",\n    \"message\": \"Validation failed for object='carDTO'. Error count: 1\",\n    \"errors\": [\n        {\n            \"codes\": [\n                \"NotBlank.carDTO.modelName\",\n                \"NotBlank.modelName\",\n                \"NotBlank.java.lang.String\",\n                \"NotBlank\"\n            ],\n            \"arguments\": [\n                {\n                    \"codes\": [\n                        \"carDTO.modelName\",\n                        \"modelName\"\n                    ],\n                    \"arguments\": null,\n                    \"defaultMessage\": \"modelName\",\n                    \"code\": \"modelName\"\n                }\n            ],\n            \"defaultMessage\": \"Mandatory\",\n            \"objectName\": \"carDTO\",\n            \"field\": \"modelName\",\n            \"rejectedValue\": null,\n            \"bindingFailure\": false,\n            \"code\": \"NotBlank\"\n        }\n    ],\n    \"path\": \"/api/\"\n}"
+					"body": "{\n    \"timestamp\": \"2023-04-24T11:24:42.629+00:00\",\n    \"status\": 400,\n    \"error\": \"Bad Request\",\n    \"trace\": \"org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<java.lang.String> it.develhope.springboot.Spring.Boot.First.API5.controller.CarController.postNewCar(it.develhope.springboot.Spring.Boot.First.API5.DTO.CarDTO) with 2 errors: [Field error in object 'carDTO' on field 'id': rejected value [null]; codes [NotBlank.carDTO.id,NotBlank.id,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [carDTO.id,id]; arguments []; default message [id]]; default message [Mandatory]] [Field error in object 'carDTO' on field 'modelName': rejected value [null]; codes [NotBlank.carDTO.modelName,NotBlank.modelName,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [carDTO.modelName,modelName]; arguments []; default message [modelName]]; default message [Mandatory]] \\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:144)\\r\\n\\tat org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:181)\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:148)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)\\r\\n\\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)\\r\\n\\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:563)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)\\r\\n\\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:631)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)\\r\\n\\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)\\r\\n\\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)\\r\\n\\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)\\r\\n\\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)\\r\\n\\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)\\r\\n\\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)\\r\\n\\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)\\r\\n\\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)\\r\\n\\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)\\r\\n\\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)\\r\\n\\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)\\r\\n\\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)\\r\\n\\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)\\r\\n\\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)\\r\\n\\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)\\r\\n\\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)\\r\\n\\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)\\r\\n\\tat java.base/java.lang.Thread.run(Thread.java:1589)\\r\\n\",\n    \"message\": \"Validation failed for object='carDTO'. Error count: 2\",\n    \"errors\": [\n        {\n            \"codes\": [\n                \"NotBlank.carDTO.id\",\n                \"NotBlank.id\",\n                \"NotBlank.java.lang.String\",\n                \"NotBlank\"\n            ],\n            \"arguments\": [\n                {\n                    \"codes\": [\n                        \"carDTO.id\",\n                        \"id\"\n                    ],\n                    \"arguments\": null,\n                    \"defaultMessage\": \"id\",\n                    \"code\": \"id\"\n                }\n            ],\n            \"defaultMessage\": \"Mandatory\",\n            \"objectName\": \"carDTO\",\n            \"field\": \"id\",\n            \"rejectedValue\": null,\n            \"bindingFailure\": false,\n            \"code\": \"NotBlank\"\n        },\n        {\n            \"codes\": [\n                \"NotBlank.carDTO.modelName\",\n                \"NotBlank.modelName\",\n                \"NotBlank.java.lang.String\",\n                \"NotBlank\"\n            ],\n            \"arguments\": [\n                {\n                    \"codes\": [\n                        \"carDTO.modelName\",\n                        \"modelName\"\n                    ],\n                    \"arguments\": null,\n                    \"defaultMessage\": \"modelName\",\n                    \"code\": \"modelName\"\n                }\n            ],\n            \"defaultMessage\": \"Mandatory\",\n            \"objectName\": \"carDTO\",\n            \"field\": \"modelName\",\n            \"rejectedValue\": null,\n            \"bindingFailure\": false,\n            \"code\": \"NotBlank\"\n        }\n    ],\n    \"path\": \"/api/\"\n}"
 				}
 			]
 		}
