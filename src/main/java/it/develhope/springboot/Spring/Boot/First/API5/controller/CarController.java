@@ -16,7 +16,10 @@ public class CarController {
     }
     @PostMapping("/")
     public ResponseEntity<String> postNewCar (@Valid @RequestBody CarDTO car){
-        return ResponseEntity.status(HttpStatus.CREATED).body(car.toString());
+        if((car.getId()==null) || car.getModelName()==null){
+            return ResponseEntity.badRequest().body("Wrong payload");
+        }
+        return ResponseEntity.status(HttpStatus.CREATED).body("Created car " + car.toString());
     }
 }
 
