@@ -35,31 +35,6 @@
 					"path": [
 						"api",
 						""
-					],
-					"query": [
-						{
-							"key": "id",
-							"value": "15648-98-44",
-							"description": "id",
-							"disabled": true
-						},
-						{
-							"key": "modelName",
-							"value": "Fiat Punto",
-							"description": "modelName",
-							"disabled": true
-						},
-						{
-							"key": "price",
-							"value": "15544.40",
-							"description": "price",
-							"disabled": true
-						},
-						{
-							"key": "",
-							"value": "",
-							"disabled": true
-						}
 					]
 				}
 			},
